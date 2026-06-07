@@ -36,24 +36,26 @@ export default function About() {
           {/* ── Left – Bio ── */}
           <div className="space-y-5 text-slate-400 leading-relaxed">
             <p>
-              I&apos;m a passionate{' '}
+              I&apos;m a{' '}
               <span className="text-slate-200 font-medium">Software Engineering undergraduate</span>{' '}
-              at the Informatics Institute of Technology (IIT), affiliated with the{' '}
+              at IIT, affiliated with the{' '}
               <span className="text-indigo-400 font-medium">University of Westminster, UK</span>.
-              I thrive at the intersection of clean code and user experience.
             </p>
             <p>
-              Over the past year I&apos;ve delivered five personal and academic projects spanning
-              native Android apps (Kotlin + Jetpack Compose), full-stack web platforms
-              (React + Spring Boot / Node.js), and a 6-member Agile group project (SDGP)
-              building an investment analysis platform for the Colombo Stock Exchange.
+              I&apos;ve built a few things so far —{' '}
+              <span className="text-slate-200 font-medium">AdManager</span>{' '}
+              (full-stack CRUD platform with auth),{' '}
+              <span className="text-slate-200 font-medium">InVezt</span>{' '}
+              (stock analysis tool, team of 6),{' '}
+              <span className="text-slate-200 font-medium">CrossMath</span>{' '}
+              (Android puzzle game),{' '}
+              <span className="text-slate-200 font-medium">AgriConnect</span>{' '}
+              (farm marketplace frontend), and a{' '}
+              <span className="text-slate-200 font-medium">Meal Recipe App</span>.
             </p>
             <p>
-              I&apos;m equally comfortable writing{' '}
-              <span className="text-violet-400 font-medium">production-ready features</span> and
-              hunting edge-case bugs — my QA background means I test what I build:
-              Postman API testing, manual STLC, black-box test cases, and defect logging
-              across iterative release cycles.
+              I also handle QA — API testing with Postman, writing test cases, and
+              logging bugs through release cycles.
             </p>
 
             {/* Contact chips */}
