@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap');
+
+/* ── Tailwind v4 custom theme tokens ─────────────────────────────── */
+@theme {
+  --font-sans:    'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-mono:    'Fira Code', ui-monospace, monospace;
+
+  --color-primary:   #6366f1;
+  --color-accent:    #a78bfa;
+  --color-cyan-glow: #22d3ee;
+  --color-emerald:   #34d399;
+  --color-surface:   #0d0f1a;
+  --color-card:      #111523;
+  --color-bg:        #04050a;
+}
+
+/* ── Base ─────────────────────────────────────────────────────────── */
+html { scroll-behavior: smooth; }
+body { font-family: var(--font-sans); }
+
+::-webkit-scrollbar       { width: 5px; }
+::-webkit-scrollbar-track { background: #04050a; }
+::-webkit-scrollbar-thumb { background: #6366f1; border-radius: 9999px; }
+::selection               { background: rgba(99,102,241,.35); color: #fff; }
+
+/* ── Keyframes only (cannot be expressed as Tailwind utilities) ────── */
+@keyframes float-orb {
+  0%,100% { transform: translate(0,0) scale(1); }
+  50%     { transform: translate(30px,40px) scale(1.08); }
+}
+@keyframes blink {
+  0%,100% { opacity: 1; }
+  50%     { opacity: 0; }
+}
+@keyframes spin-ring {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+@keyframes bounce-arrow {
+  0%,100% { transform: translateY(0); }
+  50%     { transform: translateY(8px); }
+}
+@keyframes pulse-dot {
+  0%,100% { box-shadow: 0 0 0 0 rgba(52,211,153,0.6); }
+  70%     { box-shadow: 0 0 0 8px rgba(52,211,153,0); }
+}
+@keyframes fade-in-up {
+  from { opacity:0; transform: translateY(28px); }
+  to   { opacity:1; transform: translateY(0);    }
+}
+@keyframes fade-in-right {
+  from { opacity:0; transform: translateX(30px); }
+  to   { opacity:1; transform: translateX(0);    }
+}
+@keyframes progress-fill {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+
+/* ── Utility animation helpers ────────────────────────────────────── */
+.animate-float-orb   { animation: float-orb 12s ease-in-out infinite alternate; }
+.animate-blink       { animation: blink 1s step-end infinite; }
+.animate-spin-ring   { animation: spin-ring 6s linear infinite; }
+.animate-bounce-arr  { animation: bounce-arrow 2s ease-in-out infinite; }
+.animate-pulse-dot   { animation: pulse-dot 2s infinite; }
+.animate-fade-up     { animation: fade-in-up 0.7s ease both; }
+.animate-fade-right  { animation: fade-in-right 0.8s ease both; }
+.animate-progress    { animation: progress-fill 1.2s cubic-bezier(0.22,1,0.36,1) forwards; transform-origin: left; }
+
+/* ── Intersection-observer trigger ───────────────────────────────── */
+.reveal              { opacity:0; transform:translateY(30px); transition: opacity .7s ease, transform .7s ease; }
+.reveal.visible      { opacity:1; transform:translateY(0); }
